@@ -1,4 +1,4 @@
-import { createRef, useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 
 import Grid from '@components/Grid';
@@ -9,7 +9,8 @@ import Ribbon from '@components/Ribbon';
 
 import { Step } from '@lib/search';
 
-import { InfoDS, Solver, Status, usePuzzle } from './puzzle';
+import { Status, usePuzzle } from './puzzle';
+import type { InfoDS, Solver } from './puzzle';
 import { Theme, ThemeOption } from './Theme';
 import type { ThemeColor } from './tokens';
 import { THEME_COLORS } from './tokens';
@@ -17,14 +18,12 @@ import { THEME_COLORS } from './tokens';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-
 // UI part
 const Content = styled.div`
 	width: 400px;
 	display: flex;
 	flex-direction: column;
 	margin-left: 50px;
-	margin-top: 40px;
 	align-items: center;
 `;
 
@@ -212,10 +211,10 @@ const Select = styled.select`
 	padding: 2px 8px;
 	font-family: var(--fontFamilyPrimary);
 	font-size: 0.8rem;
-	outline:none;
+	outline: none;
 	-webkit-box-shadow: 0px 2px 1px 1px #aaa;
 	box-shadow: 0px 2px 1px 1px #aaa;
-`
+`;
 
 function useHandler<T>(value: T) {
 	const [state, setState] = useState<T>(value);
@@ -230,10 +229,9 @@ function useHandler<T>(value: T) {
 	return [state, handler] as const;
 }
 
-
 // Main App file for show & solving puzzle
-// All Algorithms inside lib folder 
-// 
+// All Algorithms inside lib folder
+//
 
 export default () => {
 	const [infoState, setInfoState] = useState<InfoDS>({
@@ -245,7 +243,7 @@ export default () => {
 		steps: 0,
 	});
 	const userInput = useRef<HTMLInputElement>(null);
-	// for part2 screenshots 
+	// for part2 screenshots
 	// const containerRef = useRef<HTMLDivElement>(null);
 	const [state, dispatch] = usePuzzle(setInfoState);
 	const [theme, handleTheme] = useHandler<ThemeColor>('purple');
@@ -292,7 +290,7 @@ export default () => {
 
 	const start = () => {
 		setStepCounter(0);
-		dispatch({ type: 'START' , payload: solver });
+		dispatch({ type: 'START', payload: solver });
 	};
 
 	const reset = () => {
@@ -319,7 +317,7 @@ export default () => {
 		if (state.isFinalState && state.status !== Status.Running) {
 			dispatch({ type: 'RESET' });
 			dispatch({ type: 'START', payload: solver });
-			
+
 			if (stepCounter > infoState.steps) {
 				toast.error('You lose!');
 				return;
@@ -332,6 +330,10 @@ export default () => {
 		}
 	};
 
+	const changeSolver = (event: React.ChangeEvent<HTMLSelectElement>) => {
+		setSolver(event.currentTarget.value as Solver);
+	};
+
 	return (
 		<Theme data-theme={theme}>
 			<ToastContainer />
@@ -340,12 +342,12 @@ export default () => {
 					<Stack>
 						<Head>Info</Head>
 						<InfoContainer>
-							<p>all steps: {infoState?.steps}</p>
-							<p>f: {infoState?.f}</p>
-							<p>g: {infoState?.g}</p>
-							<p>h: {infoState?.h}</p>
-							<p>threshold: {infoState?.threshold}</p>
-							<p>min: {infoState?.min}</p>
+							<p>all steps: {infoState.steps}</p>
+							<p>f: {infoState.f}</p>
+							<p>g: {infoState.g}</p>
+							<p>h: {infoState.h}</p>
+							<p>threshold: {infoState.threshold}</p>
+							<p>min: {infoState.min}</p>
 							<p>Manual step: {stepCounter}</p>
 						</InfoContainer>
 					</Stack>
@@ -385,10 +387,7 @@ export default () => {
 							<Keys up="▲" left="◄" right="►" down="▼" />
 						</KeysContainer>
 						<Head>Algorithms</Head>
-						<Select
-							value={solver}
-							onChange={(e) => setSolver(e.currentTarget.value as Solver)}
-						>
+						<Select value={solver} onChange={changeSolver}>
 							<option value="ida">IDAStar</option>
 							<option value="rbfs">RBFS</option>
 							<option value="greedy">Greedy</option>
@@ -396,6 +395,7 @@ export default () => {
 						</Select>
 					</Stack>
 				</ContentWrapper>
+				<Footer></Footer>
 			</AppWrapper>
 		</Theme>
 	);

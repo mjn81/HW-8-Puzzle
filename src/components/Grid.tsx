@@ -27,6 +27,7 @@ const GridSquares = styled(Grid)`
   width: 270px;
   padding: 15px;
   border-radius: 10px;
+  margin-top: 20px;
   background-color: var(--primary);
   display: flex;
   flex-wrap: wrap;
