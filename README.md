@@ -1,6 +1,7 @@
 # 8-Puzzle
 
 8-puzzle problem solved with Greedy - IDA* - A* - RBFS algorithms ( manhttan distance as huerstic ).
+for compettion mode first solve the puzzle then click on the "Flag" Button to see the result.
 >public repo will be available when due date is over.
 
 ## Technologies used in this project:
@@ -38,9 +39,6 @@ or
 ```bash
 yarn dev
 ```
-
-## HW Specific
-part2 data's are in `part2-data` folder found in root app directory.
 
 ## Scripts
 
