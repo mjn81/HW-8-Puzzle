@@ -286,7 +286,7 @@ export default () => {
 		return () => {
 			document.removeEventListener('keydown', keyListener);
 		};
-	}, []);
+	}, [dispatch]);
 
 	const start = () => {
 		setStepCounter(0);

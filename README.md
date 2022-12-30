@@ -13,8 +13,8 @@
 - eslint (linter)
 - husky (git hooks)
 
-
-<a target="_blank" href="https://8-puzzle-react.jeova.ninja">Online demo</a>
+## Online Version
+<a target="_blank" href="https://8-puzzle-mjn.vercel.app">Online Version</a>
 
 ## Installation
 
