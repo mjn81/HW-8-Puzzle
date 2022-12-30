@@ -51,7 +51,7 @@ export type InfoDS = {
 		f: undefined | number,
 		g: undefined | number,
 		h: undefined | number,
-		threshold: undefined | number,
+		threshold: undefined | number | string,
 		min: undefined | number | string,
 		steps: number,
 }
@@ -340,7 +340,8 @@ export const usePuzzle = (setInfo: (obj: InfoDS) => void) => {
 					g: curState?.g,
 					h: curState?.h,
 					min: curState?.min === Number.MAX_VALUE ? '∞' : curState?.min,
-					threshold: curState?.threshold,
+					threshold:
+						curState?.threshold === Number.MAX_VALUE ? '∞' : curState?.threshold,
 					steps: len,
 				});
 			}

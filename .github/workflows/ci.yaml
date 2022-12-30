@@ -27,5 +27,3 @@ jobs:
       - name: Run the linter
         run: yarn lint
 
-      - name: Run the format checker
-        run: yarn dprint check

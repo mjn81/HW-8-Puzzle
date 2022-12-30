@@ -9,7 +9,6 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "serve": "vite preview",
-    "fmt": "dprint fmt",
     "lint": "eslint --cache --ext .ts,.tsx -c .eslintrc.yaml src/",
     "prepare": "husky install"
   },
