@@ -8,10 +8,9 @@ Technologies used in this project:
 - react-spring (animations)
 - styled-components (css-in-js)
 - vitejs (build tool)
-- dprint (formatter)
+- prettier (formatter)
 - eslint (linter)
 - husky (git hooks)
-- lint-staged
 
 
 <a target="_blank" href="https://8-puzzle-react.jeova.ninja">Online demo</a>

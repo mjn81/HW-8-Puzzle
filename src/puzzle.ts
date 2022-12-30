@@ -1,12 +1,12 @@
-import { Grid, gridFromList } from '@lib/grid';
+import { gridFromList } from '@lib/grid';
 import type { Pair } from '@lib/pair';
 import { isValidPosition, pairEq, pairSum } from '@lib/pair';
 import { AStar, IDAStar, makeSearchState, Step, RBFS, Greedy } from '@lib/search';
 import type { PathNode } from '@lib/search';
-import { RefObject, useEffect, useReducer } from 'react';
+import {  useEffect, useReducer } from 'react';
 import puzzleData from './puzzles.json';
 import { toast } from 'react-toastify';
-// @ts-ignore
+
 // for screen shots :)
 // import {useScreenshot, createFileName} from 'use-react-screenshot';
 
@@ -291,11 +291,11 @@ const reducer = (state: PuzzleState, action: Action): PuzzleState => {
 						...state,
 						solutionQueue: state.solutionQueue.slice(1),
 						gridData: updateGridData(state.solutionQueue[0], state.gridData),
-				  }
+ }
 				: {
 						...state,
 						status: Status.Stopped,
-				  };
+ };
 		default:
 			return state;
 	}
@@ -336,12 +336,12 @@ export const usePuzzle = (setInfo: (obj: InfoDS) => void) => {
 			// }
 			if (count < len) {
 				setInfo({
-					f: curState?.f,
-					g: curState?.g,
-					h: curState?.h,
-					min: curState?.min === Number.MAX_VALUE ? '∞' : curState?.min,
+					f: curState.f,
+					g: curState.g,
+					h: curState.h,
+					min: curState.min === Number.MAX_VALUE ? '∞' : curState.min,
 					threshold:
-						curState?.threshold === Number.MAX_VALUE ? '∞' : curState?.threshold,
+						curState.threshold === Number.MAX_VALUE ? '∞' : curState.threshold,
 					steps: len,
 				});
 			}

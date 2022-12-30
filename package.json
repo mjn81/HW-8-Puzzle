@@ -1,9 +1,9 @@
 {
   "name": "8-puzzle-react",
   "version": "1.0.0",
-  "description": "8-puzzle with React.js",
+  "description": "8-puzzle with React",
   "main": "index.js",
-  "author": "jeovazero",
+  "author": "Mjn",
   "license": "MIT",
   "scripts": {
     "dev": "vite",
