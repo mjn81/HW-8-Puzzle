@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export type IconProps = {
-  type: 'play' | 'reset' | 'random' | 'github-mark'
+  type: 'play' | 'reset' | 'random' | 'github-mark' | 'compare' | 'input'
   className?: string
 }
 

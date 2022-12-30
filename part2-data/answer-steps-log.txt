@@ -1,0 +1,32 @@
+[vite] connecting... client.ts:13:8
+[vite] connected. client.ts:43:14
+Array(9) [ 7, 1, 2, 0, 5, 4, 8, 6, 3 ]
+puzzle.ts:210:11
+12 puzzle.ts:185:9
+Object { step: "v", g: 0, h: 14, f: 14, threshold: 16, min: 17 }
+puzzle.ts:300:11
+Object { step: "<", g: 1, h: 12, f: 13, threshold: 16, min: 1.7976931348623157e+308 }
+puzzle.ts:300:11
+Object { step: "^", g: 2, h: 12, f: 14, threshold: 16, min: 1.7976931348623157e+308 }
+puzzle.ts:300:11
+Object { step: "<", g: 3, h: 10, f: 13, threshold: 16, min: 17 }
+puzzle.ts:300:11
+Object { step: "^", g: 4, h: 8, f: 12, threshold: 16, min: 1.7976931348623157e+308 }
+puzzle.ts:300:11
+Object { step: ">", g: 5, h: 8, f: 13, threshold: 16, min: 1.7976931348623157e+308 }
+puzzle.ts:300:11
+Object { step: ">", g: 6, h: 8, f: 14, threshold: 16, min: 17 }
+puzzle.ts:300:11
+Object { step: "v", g: 7, h: 8, f: 15, threshold: 16, min: 1.7976931348623157e+308 }
+puzzle.ts:300:11
+Object { step: "<", g: 8, h: 6, f: 14, threshold: 16, min: 1.7976931348623157e+308 }
+puzzle.ts:300:11
+Object { step: "v", g: 9, h: 6, f: 15, threshold: 16, min: 17 }
+puzzle.ts:300:11
+Object { step: "<", g: 10, h: 4, f: 14, threshold: 16, min: 1.7976931348623157e+308 }
+puzzle.ts:300:11
+Object { step: "^", g: 11, h: 2, f: 13, threshold: 16, min: 1.7976931348623157e+308 }
+puzzle.ts:300:11
+Object { step: "^", g: 12, h: 0, f: 12, threshold: 16, min: 1.7976931348623157e+308 }
+puzzle.ts:300:11
+undefined puzzle.ts:300:11

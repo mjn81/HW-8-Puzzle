@@ -4,6 +4,8 @@
  * MIT Licensed
  */
 
+// Heap data structure for greedy and A* search | O(1) add, O(log n) extract | super efficient :)
+
 const parentOf = (x: number) => Math.floor(x / 2)
 const firstChildOf = (x: number) => x * 2
 
@@ -72,6 +74,11 @@ export function Heap<Data>(compare: Compare<Data>) {
     print: () => {
       console.log(queue)
     },
+
+    peek: () => queue[0],
+
+    peekSecond: () => queue[1],
+
     size: () => queue.length
   }
 }

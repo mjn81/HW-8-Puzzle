@@ -1,4 +1,5 @@
-// Pair
+
+// Pair DS for 2D coordinations and its utility functions
 export type Pair = [number, number]
 
 export const pairEq = ([a, b]: Pair, [c, d]: Pair) => a == c && b == d

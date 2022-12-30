@@ -25,7 +25,6 @@ const Ribbon = ({ children, className }: RibbonProps) => {
 const RibbonStyled = styled(Ribbon)`
   --width: 300px;
   --height: calc(var(--width) / 5.5);
-
   display: flex;
   width: var(--width);
   padding-top: 15px;

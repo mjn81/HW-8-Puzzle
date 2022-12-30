@@ -1,7 +1,7 @@
 import type { Pair } from './pair'
 import { MAX_BOUND, pairDiff } from './pair'
 
-// Grid and Row
+// Grid and Row DS for 3x3 grid and its utility functions
 type Row = [number, number, number]
 export type Grid = [Row, Row, Row]
 
@@ -30,10 +30,11 @@ for (let i = 0; i < 8; i++) {
   finalPosition.push([Math.floor(i / 3), i % 3])
 }
 
+// Manhattan distance as heuristic for search Algorithms
 export const manhattanDistance = (grid: Grid) => {
   let sum = 0
-  for (let i = 0; i < MAX_BOUND; i++) {
-    for (let j = 0; j < MAX_BOUND; j++) {
+  for (let i = 0; i < MAX_BOUND + 1; i++) {
+    for (let j = 0; j < MAX_BOUND + 1; j++) {
       const currentNumber = grid[i][j]
       const finalPos = finalPosition[currentNumber]
       const pairResult = pairDiff(finalPos, [i, j])
