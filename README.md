@@ -1,8 +1,9 @@
 # 8-Puzzle
 
-The 8-puzzle solved with the [A-star algorithm](https://en.wikipedia.org/wiki/A*_search_algorithm)
+8-puzzle problem solved with Greedy - IDA* - A* - RBFS algorithms ( manhttan distance as huerstic ).
+>public repo will be available when due date is over.
 
-Technologies used in this project:
+## Technologies used in this project:
 
 - reactjs
 - react-spring (animations)
@@ -15,9 +16,31 @@ Technologies used in this project:
 
 <a target="_blank" href="https://8-puzzle-react.jeova.ninja">Online demo</a>
 
-<div align="center">
-  <img src="./demo.gif" width="500" />
-</div>
+## Installation
+
+```bash
+npm install
+```
+or 
+```bash
+yarn install
+```
+
+> Note: To run this project you need to have nodejs 1.16 or higher installed on your machine.
+> also highly recommended to use yarn instead of npm.
+
+## Usage
+
+```bash
+npm run dev
+```
+or 
+```bash
+yarn dev
+```
+
+## HW Specific
+part2 data's are in `part2-data` folder found in root app directory.
 
 ## Scripts
 
@@ -26,14 +49,6 @@ Technologies used in this project:
 | `yarn dev`   | Runs the dev server                |
 | `yarn build` | Builds the project for production  |
 | `yarn serve` | Servers locally a production build |
-| `yarn fmt`   | Formats the code                   |
 
 
-##
-
-To do:
-- [ ] use a zero-runtime css-in-js (remove styled-components)
-
-## 
-
-by <b>jeovazero</b>
+> Also special thanks to jeovazero for awesome react boilerplate and HeapSort Algorithm.
